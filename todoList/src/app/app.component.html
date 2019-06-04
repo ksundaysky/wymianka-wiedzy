@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div>
+  <div>
+      <input [(ngModel)]="newTask"/>
+      <button  (click)="addTask()" >Dodaj</button>
+  </div>
+</div>
+
+<div style="text-align: center">
+  <div>
+      Lista rzeczy do zrobienia
+      <ul>
+          <li *ngFor ="let task of listOfTasks">
+            {{task}}
+            <button (click)="done(task)" >Zrobione</button>
+            <button (click)="delete(task)">Usuń</button>
+          </li>
+      </ul>
+  </div>
+  <div>
+      Lista rzeczy zrobionych
+        <ul>
+            <li *ngFor ="let task of listOfDone">
+              {{task}}
+            </li>
+          </ul>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
